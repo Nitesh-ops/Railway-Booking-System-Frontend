@@ -1,0 +1,63 @@
+.outer-div {
+    display: flex;
+}
+
+.leftDiv {
+    text-align: left;
+    width: 50%;
+}
+
+.rightDiv {
+    text-align: right;
+    width: 50%;
+}
+
+
+.coaches {
+    background-color: #F7F7F7;
+}
+
+.train-img {
+    background-image: url(https://wallpapercave.com/dwp1x/wp3584370.jpg);
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 8px 16px;
+    border: 1px solid #0D6EFD;
+    color: #0D6EFD;
+    cursor: pointer;
+}
+
+.paginationActive{
+    color: white;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: #0D6EFD;
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #0D6EFD;  
+}
+
+.paginationDisabled a {
+    color: white;
+    background-color: grey;
+}
+
+.center {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}

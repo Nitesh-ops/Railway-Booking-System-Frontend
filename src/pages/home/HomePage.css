@@ -1,0 +1,73 @@
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: .5px;
+  text-align: center;
+  color: white;
+}
+
+
+.title {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+form {
+  align-items: center;
+}
+
+.form-contain {
+  background-image: url('https://neural-geode-744.web.app/img/train-banner.png');
+  padding-top: 50px;
+}
+
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.butn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  width: 30%;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.click:hover {
+  background-color: #0D6EFD;
+  color: white;
+}
