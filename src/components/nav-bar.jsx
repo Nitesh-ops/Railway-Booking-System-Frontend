@@ -12,6 +12,7 @@ import { RiAdminFill } from "react-icons/ri";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./nav-bar.css";
 import { PnrStatus } from "./PnrStatus";
+import Bounce from "react-reveal/Bounce";
 
 const NavBar = () => {
   const currentUser = useSelector((state) => state.user);
@@ -32,11 +33,13 @@ const NavBar = () => {
     <nav className="navbar sticky-top navbar-expand-sm bg-primary navbar-dark">
       <div className="container-fluid">
         <a href="/home" className="navbar-brand">
-          <img
-            src="https://toppng.com/public/uploads/thumbnail/indian-train-white-background-11549889698anaad4mqde.png"
-            alt="train_logo"
-            height={40}
-          />
+          <Bounce right>
+            <img
+              src="https://toppng.com/public/uploads/thumbnail/indian-train-white-background-11549889698anaad4mqde.png"
+              alt="train_logo"
+              height={40}
+            />
+          </Bounce>
           &nbsp;BookMyTrain
         </a>
         <button

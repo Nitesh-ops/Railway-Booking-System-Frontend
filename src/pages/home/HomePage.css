@@ -52,6 +52,10 @@ form {
   border: 2px solid dodgerblue;
 }
 
+.errorColor{
+  font-weight:900;
+}
+
 /* Set a style for the submit button */
 .butn {
   background-color: dodgerblue;

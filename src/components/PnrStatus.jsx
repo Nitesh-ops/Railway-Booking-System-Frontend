@@ -3,6 +3,7 @@ import "./PnrStatus.css";
 import { Modal, Button } from "react-bootstrap";
 import BookingService from "../services/book.service";
 import { ToastContainer, toast } from "react-toastify";
+import Fade from 'react-reveal/Fade';
 
 function PnrStatus({ show, onHide }) {
   const [submitted, setSubmitted] = useState(false);
@@ -69,7 +70,11 @@ function PnrStatus({ show, onHide }) {
                 onChange={(e) => handlePnr(e)}
                 required
               />
-              <div className="invalid-feedback">PNR Number is required.</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>PNR Number is required.</div>
+                </Fade>
+              </div>
             </div>
             <br />
             <center>

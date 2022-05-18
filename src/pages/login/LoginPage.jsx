@@ -10,6 +10,7 @@ import "../register/RegisterPage.css";
 import { MdLogin } from "react-icons/md";
 import { FaUserPlus, FaUserAlt } from "react-icons/fa";
 import Slider from "../../components/Ads/Slider";
+import Fade from "react-reveal/Fade";
 
 const LoginPage = () => {
   const [user, setUser] = useState(new User("", "", ""));
@@ -18,7 +19,6 @@ const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const currentUser = useSelector((state) => state.user);
-
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -101,7 +101,11 @@ const LoginPage = () => {
                 aria-describedby="inputGroupPrepend"
                 required
               />
-              <div className="invalid-feedback">Username is required.</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Username is required.</div>
+                </Fade>
+              </div>
             </div>
           </div>
 
@@ -121,7 +125,11 @@ const LoginPage = () => {
                 aria-describedby="inputGroupPrepend"
                 required
               />
-              <div className="invalid-feedback">Password is required.</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Password is required.</div>
+                </Fade>
+              </div>
             </div>
           </div>
 

@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { HiUserAdd } from "react-icons/hi";
+import Fade from "react-reveal/Fade";
 
 const RegisterPage = () => {
   const [user, setUser] = useState(new User("", "", ""));
@@ -61,82 +62,94 @@ const RegisterPage = () => {
   };
 
   return (
-      <div className="container mt-5">
-        {/* <img
+    <div className="container mt-5">
+      {/* <img
         src={SignUp}
         className="img-fluid"
         width={650}
         height={650}
         alt="SignUp"
       /> */}
-        <div className="card ms-auto me-auto p-3  custom-card cont">
-          <FontAwesomeIcon
-            icon={faUserCircle}
-            className="ms-auto me-auto user-icon"
-          />
-          {errorMessage && (
-            <div className="alert alert-danger">{errorMessage}</div>
-          )}
+      <div className="card ms-auto me-auto p-3  custom-card cont">
+        <FontAwesomeIcon
+          icon={faUserCircle}
+          className="ms-auto me-auto user-icon"
+        />
+        {errorMessage && (
+          <div className="alert alert-danger">{errorMessage}</div>
+        )}
 
-          <form
-            onSubmit={(e) => handleRegister(e)}
-            noValidate
-            className={submitted ? "was-validated" : ""}
-          >
-            <div className="form-group ">
-              <label htmlFor="name">Full Name:</label>
-              <input
-                type="text"
-                className="form-control"
-                name="name"
-                placeholder="name"
-                value={user.name}
-                onChange={(e) => handleChange(e)}
-                required
-              />
-              <div className="invalid-feedback">Full name is required.</div>
+        <form
+          onSubmit={(e) => handleRegister(e)}
+          noValidate
+          className={submitted ? "was-validated" : ""}
+        >
+          <div className="form-group ">
+            <label htmlFor="name">Full Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              placeholder="name"
+              value={user.name}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Full name is required.</div>
+              </Fade>
             </div>
+          </div>
 
-            <div className="form-group ">
-              <label htmlFor="username">Username:</label>
-              <input
-                type="text"
-                className="form-control"
-                name="username"
-                placeholder="username"
-                value={user.username}
-                onChange={(e) => handleChange(e)}
-                required
-              />
-              <div className="invalid-feedback">Username is required.</div>
+          <div className="form-group ">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="username"
+              placeholder="username"
+              value={user.username}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Username is required.</div>
+              </Fade>
             </div>
+          </div>
 
-            <div className="form-group ">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                placeholder="password"
-                value={user.password}
-                onChange={(e) => handleChange(e)}
-                required
-              />
-              <div className="invalid-feedback">password is required.</div>
+          <div className="form-group ">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="password"
+              value={user.password}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Password is required.</div>
+              </Fade>
             </div>
-            <button className="btn btn-info w-100 mt-3" disabled={loading}>
-              Sign Up <HiUserAdd />
-            </button>
-          </form>
-          <Link
-            to="/login"
-            className="btn btn-link"
-            style={{ color: "darkgrey" }}
-          >
-            Already Have an Account? Click here
-          </Link>
-        </div>
+          </div>
+          <button className="btn btn-info w-100 mt-3" disabled={loading}>
+            Sign Up <HiUserAdd />
+          </button>
+        </form>
+        <Link
+          to="/login"
+          className="btn btn-link"
+          style={{ color: "darkgrey" }}
+        >
+          Already Have an Account? Click here
+        </Link>
       </div>
+    </div>
   );
 };
 

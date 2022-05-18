@@ -8,6 +8,7 @@ import { TiUserDelete } from "react-icons/ti";
 import { useSelector } from "react-redux";
 import PaymentService from "./../services/payment.service";
 import swal from "sweetalert";
+import Fade from 'react-reveal/Fade';
 
 const BookingForm = () => {
   const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -294,7 +295,9 @@ const BookingForm = () => {
                                         }
                                       />
                                       <div className="invalid-feedback">
-                                        Passenger Name is required
+                                        <Fade bottom collapse>
+                                          <div>Passenger Name is required</div>
+                                        </Fade>
                                       </div>
                                     </div>
                                   </div>
@@ -312,7 +315,9 @@ const BookingForm = () => {
                                         }
                                       />
                                       <div className="invalid-feedback">
-                                        Age is required
+                                        <Fade bottom collapse>
+                                          <div>Age is required</div>
+                                        </Fade>
                                       </div>
                                     </div>
                                   </div>
@@ -342,7 +347,9 @@ const BookingForm = () => {
                                         <option value="Others">Others</option>
                                       </select>
                                       <div className="invalid-feedback">
-                                        Gender is required
+                                        <Fade bottom collapse>
+                                          <div>Gender is required</div>
+                                        </Fade>
                                       </div>
                                     </div>
                                   </div>
@@ -399,7 +406,9 @@ const BookingForm = () => {
                                 <option value="SL">SL</option>
                               </select>
                               <div className="invalid-feedback">
-                                Travel Class is required
+                                <Fade bottom collapse>
+                                  <div>Travel Class is required</div>
+                                </Fade>
                               </div>
                             </div>
 
@@ -415,7 +424,9 @@ const BookingForm = () => {
                                 onChange={(e) => handleEmailId(e)}
                               />
                               <div className="invalid-feedback">
-                                Email is required
+                                <Fade bottom collapse>
+                                  <div>Email is required</div>
+                                </Fade>
                               </div>
                             </div>
 
@@ -431,7 +442,9 @@ const BookingForm = () => {
                                 onChange={(e) => handleAddress(e)}
                               ></textarea>
                               <div className="invalid-feedback">
-                                Address is required
+                                <Fade bottom collapse>
+                                  <div>Address is required</div>
+                                </Fade>
                               </div>
                             </div>
                           </div>

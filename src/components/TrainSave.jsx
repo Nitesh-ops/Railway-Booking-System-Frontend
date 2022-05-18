@@ -4,6 +4,7 @@ import TrainService from "../services/train.service";
 import swal from "sweetalert";
 import { AiOutlineClose, AiOutlineSave } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
+import Fade from "react-reveal/Fade";
 
 const TrainSave = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
@@ -138,7 +139,11 @@ const TrainSave = forwardRef((props, ref) => {
               value={train.trainNumber}
               onChange={(e) => handleChange(e)}
             />
-            <div className="invalid-feedback">Train Number is required</div>
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Train Number is required</div>
+              </Fade>
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="trainName">Train Name</label>
@@ -151,7 +156,11 @@ const TrainSave = forwardRef((props, ref) => {
               value={train.trainName}
               onChange={(e) => handleChange(e)}
             />
-            <div className="invalid-feedback">Train Name is required</div>
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Train Name is required</div>
+              </Fade>
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="fromStation">Origin Station</label>
@@ -164,7 +173,11 @@ const TrainSave = forwardRef((props, ref) => {
               value={train.fromStation}
               onChange={(e) => handleChange(e)}
             />
-            <div className="invalid-feedback">Origin Station is required</div>
+            <div className="invalid-feedback">
+              <Fade bottom collapse>
+                <div>Origin Station is required</div>
+              </Fade>
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="toStation">Destination Station</label>
@@ -178,7 +191,9 @@ const TrainSave = forwardRef((props, ref) => {
               onChange={(e) => handleChange(e)}
             />
             <div className="invalid-feedback">
-              Destination Station is required
+              <Fade bottom collapse>
+                <div>Destination Station is required</div>
+              </Fade>
             </div>
           </div>
 
@@ -194,7 +209,11 @@ const TrainSave = forwardRef((props, ref) => {
                 value={train.departureDate}
                 onChange={(e) => handleChange(e)}
               />
-              <div className="invalid-feedback">Departure Date is required</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Departure Date is required</div>
+                </Fade>
+              </div>
             </div>
 
             <div className="form-group col-6">
@@ -208,7 +227,11 @@ const TrainSave = forwardRef((props, ref) => {
                 value={train.departureTime}
                 onChange={(e) => handleChange(e)}
               />
-              <div className="invalid-feedback">Departure Time is required</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Departure Time is required</div>
+                </Fade>
+              </div>
             </div>
           </div>
           <div className="row">
@@ -223,7 +246,11 @@ const TrainSave = forwardRef((props, ref) => {
                 value={train.arrivalDate}
                 onChange={(e) => handleChange(e)}
               />
-              <div className="invalid-feedback">Arrival Date is required</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Arrival Date is required</div>
+                </Fade>
+              </div>
             </div>
 
             <div className="form-group col-6">
@@ -237,7 +264,11 @@ const TrainSave = forwardRef((props, ref) => {
                 value={train.arrivalTime}
                 onChange={(e) => handleChange(e)}
               />
-              <div className="invalid-feedback">Arrival Time is required</div>
+              <div className="invalid-feedback">
+                <Fade bottom collapse>
+                  <div>Arrival Time is required</div>
+                </Fade>
+              </div>
             </div>
           </div>
 

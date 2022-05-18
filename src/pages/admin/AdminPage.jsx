@@ -7,6 +7,7 @@ import TrainService from "../../services/train.service";
 import "./AdminPage.css";
 import ReactPaginate from "react-paginate";
 import Spinner from "react-bootstrap/Spinner";
+import Zoom from "react-reveal/Zoom";
 
 const AdminPage = () => {
   const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -155,99 +156,113 @@ const AdminPage = () => {
     .map((item) => {
       return (
         <div className="card-body" key={item.trainNumber}>
-          <div className="card">
-            <h5 className="card-header">
-              {item.trainName} ({item.trainNumber})
-            </h5>
-            <div className="card-body">
-              <div className="card-title outer-div">
-                <div className="leftDiv">
-                  <h5>
-                    {item.departureTime.slice(0, 2)}:
-                    {item.departureTime.slice(3, 5)} | {item.fromStation} |{" "}
-                    {weekday[new Date(item.departureDate).getDay()]},{" "}
-                    {new Date(item.departureDate).getDate()}{" "}
-                    {month[new Date(item.departureDate).getMonth()]}
-                  </h5>
+          <Zoom top>
+            <div className="card">
+              <h5 className="card-header">
+                {item.trainName} ({item.trainNumber})
+              </h5>
+              <div className="card-body">
+                <div className="card-title outer-div">
+                  <div className="leftDiv">
+                    <h5>
+                      {item.departureTime.slice(0, 2)}:
+                      {item.departureTime.slice(3, 5)} | {item.fromStation} |{" "}
+                      {weekday[new Date(item.departureDate).getDay()]},{" "}
+                      {new Date(item.departureDate).getDate()}{" "}
+                      {month[new Date(item.departureDate).getMonth()]}
+                    </h5>
+                  </div>
+                  <div className="rightDiv">
+                    <h5>
+                      {item.arrivalTime.slice(0, 2)}:
+                      {item.arrivalTime.slice(3, 5)} | {item.toStation} |{" "}
+                      {weekday[new Date(item.arrivalDate).getDay()]},{" "}
+                      {new Date(item.arrivalDate).getDate()}{" "}
+                      {month[new Date(item.arrivalDate).getMonth()]}
+                    </h5>
+                  </div>
                 </div>
-                <div className="rightDiv">
-                  <h5>
-                    {item.arrivalTime.slice(0, 2)}:
-                    {item.arrivalTime.slice(3, 5)} | {item.toStation} |{" "}
-                    {weekday[new Date(item.arrivalDate).getDay()]},{" "}
-                    {new Date(item.arrivalDate).getDate()}{" "}
-                    {month[new Date(item.arrivalDate).getMonth()]}
-                  </h5>
+                <div className="card-text">
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <div className="card ">
+                        <div className="card-body coaches">
+                          <h6 className="card-title">AC First Class (1A)</h6>
+                          <p className="card-text">
+                            Available:{" "}
+                            {
+                              item.travelDetails.coachesClass[0]
+                                .availableTickets
+                            }
+                          </p>
+                          {item.travelDetails.coachesClass[0].fare}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-2">
+                      <div className="card">
+                        <div className="card-body coaches">
+                          <h6 className="card-title">AC 2 Tier (2A)</h6>
+                          <p className="card-text">
+                            Available:{" "}
+                            {
+                              item.travelDetails.coachesClass[1]
+                                .availableTickets
+                            }
+                          </p>
+                          {item.travelDetails.coachesClass[1].fare}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-2">
+                      <div className="card">
+                        <div className="card-body coaches">
+                          <h6 className="card-title">AC 3 Tier (3A)</h6>
+                          <p className="card-text">
+                            Available:{" "}
+                            {
+                              item.travelDetails.coachesClass[2]
+                                .availableTickets
+                            }
+                          </p>
+                          {item.travelDetails.coachesClass[2].fare}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-2">
+                      <div className="card">
+                        <div className="card-body coaches">
+                          <h6 className="card-title">Sleeper (SL)</h6>
+                          <p className="card-text">
+                            Available:{" "}
+                            {
+                              item.travelDetails.coachesClass[3]
+                                .availableTickets
+                            }
+                          </p>
+                          {item.travelDetails.coachesClass[3].fare}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="card-text">
-                <div className="row">
-                  <div className="col-sm-2">
-                    <div className="card ">
-                      <div className="card-body coaches">
-                        <h6 className="card-title">AC First Class (1A)</h6>
-                        <p className="card-text">
-                          Available:{" "}
-                          {item.travelDetails.coachesClass[0].availableTickets}
-                        </p>
-                        {item.travelDetails.coachesClass[0].fare}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-2">
-                    <div className="card">
-                      <div className="card-body coaches">
-                        <h6 className="card-title">AC 2 Tier (2A)</h6>
-                        <p className="card-text">
-                          Available:{" "}
-                          {item.travelDetails.coachesClass[1].availableTickets}
-                        </p>
-                        {item.travelDetails.coachesClass[1].fare}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-2">
-                    <div className="card">
-                      <div className="card-body coaches">
-                        <h6 className="card-title">AC 3 Tier (3A)</h6>
-                        <p className="card-text">
-                          Available:{" "}
-                          {item.travelDetails.coachesClass[2].availableTickets}
-                        </p>
-                        {item.travelDetails.coachesClass[2].fare}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-2">
-                    <div className="card">
-                      <div className="card-body coaches">
-                        <h6 className="card-title">Sleeper (SL)</h6>
-                        <p className="card-text">
-                          Available:{" "}
-                          {item.travelDetails.coachesClass[3].availableTickets}
-                        </p>
-                        {item.travelDetails.coachesClass[3].fare}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="card-footer">
+                <button
+                  className="btn btn-primary me-1"
+                  onClick={() => editTrainRequest(item)}
+                >
+                  <AiFillEdit /> Edit
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteTrainRequest(item)}
+                >
+                  <AiFillDelete /> Delete
+                </button>
               </div>
             </div>
-            <div className="card-footer">
-              <button
-                className="btn btn-primary me-1"
-                onClick={() => editTrainRequest(item)}
-              >
-                <AiFillEdit /> Edit
-              </button>
-              <button
-                className="btn btn-danger"
-                onClick={() => deleteTrainRequest(item)}
-              >
-                <AiFillDelete /> Delete
-              </button>
-            </div>
-          </div>
+          </Zoom>
         </div>
       );
     });
